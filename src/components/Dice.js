@@ -2,11 +2,13 @@ import React from 'react';
 import '../App.css';
 
 const Die = (props) => {
-    const value = props.value
+    const styles = {
+        backgroundColor: props.isHeld ? "#59E391" : "white"
+    }
 
     return (
-        <div className="dice-face">
-            <h2 className="dice-num">{value}</h2>
+        <div className="dice-face" style={styles} onClick={props.holdDice}>
+            <h2 className="dice-num">{props.value}</h2>
         </div>
     )
 }
